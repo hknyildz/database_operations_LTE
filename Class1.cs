@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         public void fieldEkle(string tabloadi, string fieldname, datatypes datatipi, int len = 0, int len1 = 0)//,int veritipi
         {
             // string fieldtype = ((datatypes)veritipi).ToString();
-            SqlConnection baglanti = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=Aa5715805");
+            SqlConnection baglanti = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=*********");
             baglanti.Open();
             SqlCommand komut = new SqlCommand();
             komut.Connection = baglanti;
@@ -263,7 +263,7 @@ namespace WindowsFormsApp1
         }
         public void tabloEkle(string tabloadi)
         {
-            SqlConnection baglanti = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=Aa5715805");
+            SqlConnection baglanti = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=*********");
             baglanti.Open();
             SqlCommand komut = new SqlCommand();
             komut.Connection = baglanti;
@@ -274,7 +274,7 @@ namespace WindowsFormsApp1
 
         public void foreignKeyEkle(string foreign_key, string primary_key, string tablenameFK, string tablenamePK)
         {
-            var baglanti = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=Aa5715805");
+            var baglanti = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=*********");
             baglanti.Open();
             SqlCommand komut = new SqlCommand();
             komut.Connection = baglanti;
@@ -289,7 +289,7 @@ namespace WindowsFormsApp1
             tabloEkle(enum_);
             fieldEkle(enum_, "enumValue", datatypes.int_);
             fieldEkle(enum_, "enumName", datatypes.string_, 36);
-            SqlConnection baglanti = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=Aa5715805");
+            SqlConnection baglanti = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=*********");
             baglanti.Open();
             SqlCommand komut = new SqlCommand();
             foreach (var item in enumvalues)
@@ -323,7 +323,7 @@ namespace WindowsFormsApp1
 
         public void createFunction(string fonksiyonismi, string tabloadi)
         {
-            var baglanti = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=Aa5715805");
+            var baglanti = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=*********");
             baglanti.Open();
             SqlCommand komut = new SqlCommand();
             komut.Connection = baglanti;

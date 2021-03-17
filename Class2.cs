@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
             //string newcommandwp = "SET @dbname = DATABASE();SET @tablename = '" + tabloadi + "';SET @columnname = '" + fieldname + "';SET @preparedStatement = (SELECT IF(  (    SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS    WHERE      (table_name = @tablename)      AND (table_schema = @dbname)      AND (column_name = @columnname)  ) > 0,  'SELECT 1',  CONCAT('ALTER TABLE ', @tablename, ' ADD ', @columnname, ' " + datatipi + ";')));PREPARE alterIfNotExists FROM @preparedStatement;EXECUTE alterIfNotExists;DEALLOCATE PREPARE alterIfNotExists;";
             //string newcommand1p = "SET @dbname = DATABASE();SET @tablename = '" + tabloadi + "';SET @columnname = '" + fieldname + "';SET @preparedStatement = (SELECT IF(  (    SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS    WHERE      (table_name = @tablename)      AND (table_schema = @dbname)      AND (column_name = @columnname)  ) > 0,  'SELECT 1',  CONCAT('ALTER TABLE ', @tablename, ' ADD ', @columnname, ' " + datatipi + ";')));PREPARE alterIfNotExists FROM @preparedStatement;EXECUTE alterIfNotExists;DEALLOCATE PREPARE alterIfNotExists;";
             //string newcommand2p = "SET @dbname = DATABASE();SET @tablename = '" + tabloadi + "';SET @columnname = '" + fieldname + "';SET @preparedStatement = (SELECT IF(  (    SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS    WHERE      (table_name = @tablename)      AND (table_schema = @dbname)      AND (column_name = @columnname)  ) > 0,  'SELECT 1',  CONCAT('ALTER TABLE ', @tablename, ' ADD ', @columnname, ' " + datatipi + ";')));PREPARE alterIfNotExists FROM @preparedStatement;EXECUTE alterIfNotExists;DEALLOCATE PREPARE alterIfNotExists;";
-            MySqlConnection baglanti = new MySqlConnection(@"server=localhost;port=3306;database=database1_my;user=root;password=Aa5715805;Allow User Variables=True");
+            MySqlConnection baglanti = new MySqlConnection(@"server=localhost;port=3306;database=database1_my;user=root;password=*********;Allow User Variables=True");
             baglanti.Open();
             MySqlCommand komut = new MySqlCommand();
             komut.Connection = baglanti;
@@ -306,7 +306,7 @@ namespace WindowsFormsApp1
         public void tabloEkle(string tabloadi1)
         {
             string sorgu = "CREATE TABLE IF NOT EXISTS database1_my.`"+tabloadi1+"` (`"+tabloadi1+"PK` VARCHAR(36)  UNIQUE PRIMARY KEY);";
-            MySqlConnection baglanti = new MySqlConnection(@"server=localhost;port=3306;database=database1_my;user=root;password=Aa5715805");
+            MySqlConnection baglanti = new MySqlConnection(@"server=localhost;port=3306;database=database1_my;user=root;password=*********");
             baglanti.Open();
             MySqlCommand komut = new MySqlCommand();
             komut.Connection = baglanti;
@@ -324,7 +324,7 @@ namespace WindowsFormsApp1
                 definition = " NOT NULL";
             }
 
-            MySqlConnection baglanti = new MySqlConnection(@"server=localhost;port=3306;database=database1_my;user=root;password=Aa5715805");
+            MySqlConnection baglanti = new MySqlConnection(@"server=localhost;port=3306;database=database1_my;user=root;password=*********");
             baglanti.Open();
             MySqlCommand komut = new MySqlCommand();
             komut.Connection = baglanti;
@@ -381,7 +381,7 @@ namespace WindowsFormsApp1
 
         public void foreignKeyEkle(string foreign_key, string primary_key, string tablenameFK, string tablenamePK)
         {
-            MySqlConnection baglanti = new MySqlConnection(@"server=localhost;port=3306;database=database1_my;user=root;password=Aa5715805");
+            MySqlConnection baglanti = new MySqlConnection(@"server=localhost;port=3306;database=database1_my;user=root;password=*********");
             baglanti.Open();
             MySqlCommand komut = new MySqlCommand();
             komut.Connection = baglanti;
@@ -396,7 +396,7 @@ namespace WindowsFormsApp1
             tabloEkle(enum_);
             fieldEkle(enum_, "enumValue", datatypes.int_);
             fieldEkle(enum_, "enumName", datatypes.string_, 36);
-            MySqlConnection baglanti = new MySqlConnection(@"server=localhost;port=3306;database=database1_my;user=root;password=Aa5715805");
+            MySqlConnection baglanti = new MySqlConnection(@"server=localhost;port=3306;database=database1_my;user=root;password=*********");
             baglanti.Open();
             MySqlCommand komut = new MySqlCommand();
             foreach (var item in enumvalues)
@@ -433,7 +433,7 @@ namespace WindowsFormsApp1
         }
         public void createFunction(string fonksiyonismi, string tabloadi)
         {
-            var baglanti = new MySqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=Aa5715805");
+            var baglanti = new MySqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=database1;Persist Security Info=True;User Id =sa; Password=*********");
             baglanti.Open();
             MySqlCommand komut = new MySqlCommand();
             komut.Connection = baglanti;
